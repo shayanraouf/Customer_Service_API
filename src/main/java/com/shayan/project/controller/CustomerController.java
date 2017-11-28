@@ -4,12 +4,8 @@ import com.shayan.project.model.CustomerTemp;
 import com.shayan.project.repo.CustomerDAOImpl;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.*;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-
-
 
 import java.util.HashMap;
 import java.util.Map;
