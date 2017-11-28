@@ -1,0 +1,40 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+		springCloudVersion = '1.2.0.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.shayan'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	runtime('com.h2database:h2')
+	runtime('org.hsqldb:hsqldb')
+	runtime('com.microsoft.sqlserver:mssql-jdbc')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile("org.springframework.cloud:spring-cloud-aws-context:${springCloudVersion}")
+	compile "io.springfox:springfox-swagger2:2.7.0"
+	compile 'io.springfox:springfox-swagger-ui:2.7.0'
+}
